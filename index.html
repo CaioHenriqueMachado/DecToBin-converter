@@ -8,24 +8,31 @@
 </head>
 <body>
   <div class="container">
-    <h1>number converter</h1>
+    <h1>Numeric base converter</h1>
     <div class="box">
-      <div class="input">
-        <h3>DECIMAL</h3>
-        <input type="number" pattern="[0-9]+$" required="requerido">
-      </div>
-      <div class="input">
-        <h3>BINÁRIO</h3>
-        <input type="number">
-      </div>
-      <div class="input">
-        <h3>HEXADECIMAL</h3>
-        <input type="text">
-      </div>
-      <div class="input">
-        <h3>OCTAL</h3>
-        <input type="text">
-      </div>
+      <form>
+        <div class="input">
+          <h3>DECIMAL</h3>
+          <input type="text" pattern="[0-9]+$" required="requerido" title="Somente números">
+        </div>
+        <div class="input">
+          <h3>BINÁRIO</h3>
+          <input type="text" pattern="[0-1]+$" required="requerido" title="Somente digitos '1' e '0'">
+        </div>
+        <div class="input">
+          <h3>HEXADECIMAL</h3>
+          <input type="text" pattern="[a-fA-F0-9]+$" required="requerido" title="Somente 0 á 9 ou 'a' á 'f' ">
+        </div>
+        <div class="input">
+          <h3>OCTAL</h3>
+          <input type="text" pattern="[0-1]+$" required="requerido" title="Somente digitos '1' e '0'">
+        </div>
+        <div class="button">
+          <input type="submit" class="button" value="Calcular">
+          <input type="reset" class="button" value="Limpar valores">
+        </div>
+        
+      </form>
     </div>
   </div>
 </body>
