@@ -13,7 +13,7 @@
       <form>
         <div class="input">
           <h3>DECIMAL</h3>
-          <input type="text" pattern="[0-9]+$" required="requerido" title="Somente números">
+        <input type="text" pattern="[0-9]+$" required="requerido" title="Somente números" onkeypress="return fun(value)">
         </div>
         <div class="input">
           <h3>BINÁRIO</h3>
@@ -28,12 +28,13 @@
           <input type="text" pattern="[0-1]+$" required="requerido" title="Somente digitos '1' e '0'">
         </div>
         <div class="button">
-          <input type="submit" class="button" value="Calcular">
-          <input type="reset" class="button" value="Limpar valores">
+          <input type="reset" class="button" value="Limpar">
+          <input type="submit" class="button" value="Calcular">  
         </div>
         
       </form>
     </div>
   </div>
+  <script src="./js/script.js"></script>
 </body>
 </html>
