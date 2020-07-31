@@ -8,28 +8,33 @@ const octal = document.getElementById("oct");
 function fun(value) {
   toBin(value);
   toHex(value);
+  toOct(value);
 
 };
 
+// BINARY FUNCTION
 var bin = '';
 function toBin(valor){
   bin += valor % 2;
 
-  if (valor / 2 != 0 && valor / 2 != 1) {
+  if ((valor / 2) > 1) {
     toBin(parseInt(valor/2 ,0));
     
   }else {
-    var result = parseInt(valor/2 ,0);
+    var result = '';
+    if (parseInt(valor/2 ,0) > 0){
+      result = parseInt(valor/2 ,0);
+    }
+
     result += bin.split('').reverse().join('');
     binary.value = result;
     bin = '';
-
   }
 }
 
+// HEXADECIMAL FUNCTION
 var hex = '';
 function toHex(valor){
-  console.log(valor);
 
   switch((valor % 16)){
     case 10:
@@ -55,7 +60,7 @@ function toHex(valor){
       break;
   }
 
-  if (valor / 16 > 15) {
+  if ((valor/16) > 15) {
     toHex(parseInt(valor/16 ,0));
     
   }else {
@@ -65,8 +70,27 @@ function toHex(valor){
     }
     
     result += hex.split('').reverse().join('');
-    console.log(result);
     hexadecimal.value = result;
     hex = '';
+  }
+}
+
+// OCTAL FUNCTION
+var oct = '';
+function toOct(valor){
+  oct += valor % 8;
+
+  if ((valor/8) > 7) {
+    toOct(parseInt(valor/8 ,0));
+    
+  }else {
+    var result = '';
+    if (parseInt(valor/8 ,0) > 0){
+      result = parseInt(valor/8 ,0);
+    }
+
+    result += oct.split('').reverse().join('');
+    octal.value = result;
+    oct = '';
   }
 }
