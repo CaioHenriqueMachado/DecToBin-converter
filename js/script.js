@@ -11,22 +11,21 @@ function funDec(value) {
 };
 
 function funBin(value) {
-  toHex(value);
-  aux = toOct(value);
-  toDec(aux);
+  aux = binToDec(value);
+  toHex(aux);
+  toOct(aux);
 };
 
 function funHex(value) {
-  toHex(value);
-  toOct(value);
-  toBin(value);
+  aux = hexToDec(value);
+  toBin(aux);
+  toOct(aux);
 };
 
 function funOct(value) {
-  aux = toDec(value);
-  toHex(value);
-  toOct(value);
-  toBin(value);
+  aux = octToDec(value);
+  toHex(aux);
+  toBin(aux);
 };
 
 //DEC TO BINARY FUNCTION
@@ -179,5 +178,3 @@ function binToDec(value){
   decimal.value = calc;
   return calc;
 }
-
-binToDec(10000);
