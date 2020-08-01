@@ -164,4 +164,20 @@ function hexToDec(value){
   return calc;
 }
 
-hexToDec('f1a')
+
+// BIN TO DEC FUNCTION
+
+function binToDec(value){
+  var num = value.toString().length;
+  var calc = 0;
+
+  for (i = 0; i < num; i++){
+    var str = Number(value.toString()[i]);
+    calc += (str) * Math.pow(2,num-i-1);
+  }
+  console.log(calc);
+  decimal.value = calc;
+  return calc;
+}
+
+binToDec(10000);
