@@ -11,6 +11,9 @@
 </p>
 
 <br>
+  <img src="./img/wallpaper.png" alt="image app">
+<br>
+<br>
   <h2 align="center">FEATURES :book:</h2>
 <br>
 
