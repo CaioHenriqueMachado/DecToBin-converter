@@ -94,3 +94,17 @@ function toOct(valor){
     oct = '';
   }
 }
+
+// OCT TO DEC
+
+function toDec(value){
+  var num = toString(value).length;
+  var calc = 0;
+  var i = 0;
+  while(num != 0){
+    calc += (value[i] ) * (8^num);
+    i++;
+    num--;
+  }
+
+}
