@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.css">
-  <title>Decimal to Binary converter</title>
+  <title>Numeric base converter</title>
 </head>
 <body>
   <div class="container">
@@ -25,13 +25,11 @@
         </div>
         <div class="input">
           <h3>OCTAL</h3>
-          <input id="oct" type="text" pattern="[0-1]+$" required="requerido" title="Somente digitos '1' e '0'" onkeyup="return funOct(value)">
+          <input id="oct" type="text" pattern="[0-9]+$" required="requerido" title="Somente digitos '1' e '0'" onkeyup="return funOct(value)">
         </div>
         <div class="button">
           <input type="reset" class="button" value="Limpar">
-          <input type="submit" class="button" value="Calcular">  
         </div>
-        
       </form>
     </div>
   </div>
