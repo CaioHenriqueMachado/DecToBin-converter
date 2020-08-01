@@ -12,20 +12,21 @@ function funDec(value) {
 
 function funBin(value) {
   aux = binToDec(value);
-  toHex(aux);
-  toOct(aux);
+  console.log(`aqui` + aux);
+  decToHex(aux);
+  decToOct(aux);
 };
 
 function funHex(value) {
   aux = hexToDec(value);
-  toBin(aux);
-  toOct(aux);
+  decToBin(aux);
+  decToOct(aux);
 };
 
 function funOct(value) {
   aux = octToDec(value);
-  toHex(aux);
-  toBin(aux);
+  decToHex(aux);
+  decToBin(aux);
 };
 
 //DEC TO BINARY FUNCTION
