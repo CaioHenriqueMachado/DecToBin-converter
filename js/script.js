@@ -132,19 +132,36 @@ function hexToDec(value){
   var num = value.toString().length;
   var calc = 0;
   var i = 0;
-  while(num != 0){
-    var text = value[i]
-    text = toString(text).toUpperCase().replace("A","10");
-    text = toString(text).toUpperCase().replace("B","11");
-    text = toString(text).toUpperCase().replace("C","12");
-    text = toString(text).toUpperCase().replace("D","13");
-    text = toString(text).toUpperCase().replace("E","14");
-    text = toString(text).toUpperCase().replace("F","15");
-    calc += (text) * (8^num);
-    i++;
-    num--;
+  for (i = 0; i < num; i++){
+    var text = value[i].toUpperCase();
+    console.log(text)
+    switch(text){
+      case "A":
+        text = 10;
+        break;
+      case "B":
+        text = 11;
+        break;
+      case "C":
+        text = 12;
+        break;
+      case "D":
+        text = 13;
+        break;
+      case "E":
+        text = 14;
+        break;
+      case "F":
+        text = 15;
+        break;
+      default:
+        text = Number(text);
+        break;
+    }
+    calc += (text) * Math.pow(16,num-i-1);
   }
-  console.log(calc);
+  decimal.value = calc;
+  return calc;
 }
 
-hexToDec('F1')
+hexToDec('f1a')
