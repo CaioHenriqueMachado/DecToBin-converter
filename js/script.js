@@ -1,24 +1,41 @@
-
 const hexadecimal = document.getElementById("hex");
 const binary = document.getElementById("bin");
 const octal = document.getElementById("oct");
+const decimal = document.getElementById("dec");
 
-
-
-function fun(value) {
-  toBin(value);
-  toHex(value);
-  toOct(value);
-
+var aux = 0;
+function funDec(value) {
+  decToBin(value);
+  decToHex(value);
+  decToOct(value);
 };
 
-// BINARY FUNCTION
+function funBin(value) {
+  toHex(value);
+  aux = toOct(value);
+  toDec(aux);
+};
+
+function funHex(value) {
+  toHex(value);
+  toOct(value);
+  toBin(value);
+};
+
+function funOct(value) {
+  aux = toDec(value);
+  toHex(value);
+  toOct(value);
+  toBin(value);
+};
+
+//DEC TO BINARY FUNCTION
 var bin = '';
-function toBin(valor){
+function decToBin(valor){
   bin += valor % 2;
 
   if ((valor / 2) > 1) {
-    toBin(parseInt(valor/2 ,0));
+    decToBin(parseInt(valor/2 ,0));
     
   }else {
     var result = '';
@@ -32,9 +49,9 @@ function toBin(valor){
   }
 }
 
-// HEXADECIMAL FUNCTION
+//DEC TO HEXADECIMAL FUNCTION
 var hex = '';
-function toHex(valor){
+function decToHex(valor){
 
   switch((valor % 16)){
     case 10:
@@ -61,7 +78,7 @@ function toHex(valor){
   }
 
   if ((valor/16) > 15) {
-    toHex(parseInt(valor/16 ,0));
+    decToHex(parseInt(valor/16 ,0));
     
   }else {
     var result = '';
@@ -75,13 +92,13 @@ function toHex(valor){
   }
 }
 
-// OCTAL FUNCTION
+//DEC TO OCTAL FUNCTION
 var oct = '';
-function toOct(valor){
+function decToOct(valor){
   oct += valor % 8;
 
   if ((valor/8) > 7) {
-    toOct(parseInt(valor/8 ,0));
+    decToOct(parseInt(valor/8 ,0));
     
   }else {
     var result = '';
@@ -95,16 +112,39 @@ function toOct(valor){
   }
 }
 
-// OCT TO DEC
+// OCT TO DEC FUNCTION
 
-function toDec(value){
-  var num = toString(value).length;
+function octToDec(value){
+  var num = value.toString().length;
+  var calc = 0;
+
+  for (i = 0; i < num; i++){
+    var str = Number(value.toString()[i]);
+    calc += (str) * Math.pow(8,num-i-1);
+  }
+  decimal.value = calc;
+  return calc;
+}
+
+// HEX TO DEC FUNCTION
+
+function hexToDec(value){
+  var num = value.toString().length;
   var calc = 0;
   var i = 0;
   while(num != 0){
-    calc += (value[i] ) * (8^num);
+    var text = value[i]
+    text = toString(text).toUpperCase().replace("A","10");
+    text = toString(text).toUpperCase().replace("B","11");
+    text = toString(text).toUpperCase().replace("C","12");
+    text = toString(text).toUpperCase().replace("D","13");
+    text = toString(text).toUpperCase().replace("E","14");
+    text = toString(text).toUpperCase().replace("F","15");
+    calc += (text) * (8^num);
     i++;
     num--;
   }
-
+  console.log(calc);
 }
+
+hexToDec('F1')

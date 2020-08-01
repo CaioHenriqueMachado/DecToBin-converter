@@ -13,19 +13,19 @@
       <form>
         <div class="input">
           <h3>DECIMAL</h3>
-        <input id="dec" type="text" pattern="[0-9]+$" required="requerido" title="Somente números" onkeyup="return fun(value)">
+        <input id="dec" type="text" pattern="[0-9]+$" required="requerido" title="Somente números" onkeyup="return funDec(value)">
         </div>
         <div class="input">
           <h3>BINÁRIO</h3>
-          <input id="bin" type="text" pattern="[0-1]+$" required="requerido" title="Somente digitos '1' e '0'" onkeyup="return fun(value)">
+          <input id="bin" type="text" pattern="[0-1]+$" required="requerido" title="Somente digitos '1' e '0'" onkeyup="return funBin(value)">
         </div>
         <div class="input">
           <h3>HEXADECIMAL</h3>
-          <input id="hex" type="text" pattern="[a-fA-F0-9]+$" required="requerido" title="Somente 0 á 9 ou 'a' á 'f' ">
+          <input id="hex" type="text" pattern="[a-fA-F0-9]+$" required="requerido" title="Somente 0 á 9 ou 'a' á 'f' " onkeyup="return funHex(value)">
         </div>
         <div class="input">
           <h3>OCTAL</h3>
-          <input id="oct" type="text" pattern="[0-1]+$" required="requerido" title="Somente digitos '1' e '0'">
+          <input id="oct" type="text" pattern="[0-1]+$" required="requerido" title="Somente digitos '1' e '0'" onkeyup="return funOct(value)">
         </div>
         <div class="button">
           <input type="reset" class="button" value="Limpar">
