@@ -2,7 +2,7 @@
 
 <h2 align="center">O coversor de base decimal recebe um número decimal e converte em binário, octal e hexadecimal</h2>
 
-<p align="center"><strong><a href="https://caiohenriquemachado.github.io/QuizViperX-project/">ACESSAR SITE</a></strong></p>
+<p align="center"><strong><a href="https://caiohenriquemachado.github.io/Numeric-base-converter/">ACESSAR SITE</a></strong></p>
 
 <p align="center">
   <a href="https://opensource.org/licenses/MIT">
